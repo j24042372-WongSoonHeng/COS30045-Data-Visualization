@@ -1,0 +1,718 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;600;700&display=swap');
+
+:root {
+  --color-bg-page: #fbfaf8;
+  --color-bg-white: #ffffff;
+  --color-bg-tan: #f5efe6;
+  --color-bg-dark-brown: #8c7355;
+  /* for some cards like kill standby */
+  --color-bg-footer: #3c352d;
+
+  --color-text-main: #4a4036;
+  --color-text-light: #706355;
+  --color-text-footer: #e8e3dc;
+
+  --color-accent-orange: #f09b24;
+  --color-accent-orange-hover: #d88a1e;
+
+  --color-border: #e6dfd5;
+  --color-border-dark: #d2c8bc;
+
+  --radius-four: 8px;
+  --radius-hero: 12px;
+  --shadow-sm: 0 2px 8px rgba(74, 64, 54, 0.05);
+
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Hanken Grotesk', sans-serif;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-text-main);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--color-text-light);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header & Navigation */
+header {
+  background-color: var(--color-bg-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.logo-container a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  gap: 0.5rem;
+}
+
+.logo-container img {
+  height: 32px;
+  width: auto;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-text-main);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text-light);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color var(--transition-speed) ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-text-main);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-text-main);
+  transition: width var(--transition-speed) ease;
+}
+
+.nav-links a.active {
+  color: var(--color-text-main);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Main Content Area */
+main {
+  flex-grow: 1;
+  padding-bottom: 4rem;
+}
+
+/* Hero Box Layout */
+.hero-box {
+  background-color: var(--color-bg-tan);
+  border-radius: var(--radius-hero);
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+
+.hero-content {
+  flex: 1;
+  padding: 4rem 3rem;
+}
+
+.hero-image {
+  flex: 1;
+  height: 100%;
+  min-height: 400px;
+}
+
+/* Modifier for hero images that need inner padding (e.g. Televisions) */
+.hero-image.hero-image--padded {
+  padding: 2rem;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-image--padded img {
+  border-radius: var(--radius-four);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-four);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-speed) ease;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-orange);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-orange-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-text-main);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-text-main);
+  background-color: var(--color-bg-page);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Grid & Cards - Home Top Consumers */
+/* Shared Layouts & Cards */
+.grid-3,
+.tips-grid,
+.tips-grid-bottom,
+.about-grid-top,
+.about-grid-bottom {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-3,
+.tips-grid-bottom,
+.about-grid-bottom {
+  margin-bottom: 4rem;
+}
+
+.tips-grid,
+.about-grid-top {
+  margin-bottom: 1.5rem;
+}
+
+.card,
+.faq-item,
+.tip-card {
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-four);
+}
+
+.card p,
+.tip-card p,
+.team-card-content p,
+.image-overlay p {
+  font-size: 0.9rem;
+}
+
+/* Specific Grid Layouts */
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .stat-block {
+  margin: 1rem 0;
+}
+
+.card .stat-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-accent-orange);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.card .stat-unit {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  font-weight: 600;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-bottom: 4rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.faq-item {
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-text-main);
+  user-select: none;
+}
+
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-speed) ease;
+}
+
+.faq-icon::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--color-text-light);
+  border-bottom: 2px solid var(--color-text-light);
+  transform: rotate(45deg);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all var(--transition-speed) ease;
+}
+
+.faq-item.active .faq-answer {
+  padding: 0 1.5rem 1.25rem;
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Television Tech Breakdown */
+.tech-card {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.tech-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--color-accent-orange);
+  font-size: 1.2rem;
+}
+
+.tech-card .avg-consumption {
+  background-color: var(--color-bg-tan);
+  margin: auto -1.5rem 0 -1.5rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.tech-card .avg-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-light);
+  margin-bottom: 0.25rem;
+}
+
+.tech-card .stat-inline {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.tech-card .stat-number {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.tech-card .stat-unit {
+  font-size: 0.9rem;
+}
+
+/* Energy Saving Tips Grid */
+.tips-grid {
+  grid-template-columns: 2fr 1fr;
+}
+
+.tips-grid-bottom {
+  grid-template-columns: 1fr 1fr;
+}
+
+.tip-card {
+  padding: 2rem;
+}
+
+.tip-card.highlight-bg {
+  background-color: var(--color-bg-tan);
+  border: none;
+}
+
+.tip-card.highlight-bg p {
+  font-size: 1rem;
+}
+
+.tip-card.dark-bg {
+  background-color: var(--color-bg-dark-brown);
+  border: none;
+  color: white;
+}
+
+.tip-card.dark-bg h3,
+.tip-card.dark-bg p {
+  color: white;
+}
+
+.tip-card.dark-bg .tip-icon {
+  color: white;
+  font-size: 2rem;
+}
+
+.tip-icon {
+  margin-bottom: 1rem;
+  color: var(--color-accent-orange);
+  font-size: 1.5rem;
+}
+
+.about-grid-top {
+  grid-template-columns: 1fr;
+}
+
+.about-grid-bottom {
+  grid-template-columns: 1fr 2fr;
+}
+
+.image-card {
+  position: relative;
+  border-radius: var(--radius-four);
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+}
+
+.image-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.image-overlay p {
+  margin-bottom: 0;
+  color: white;
+}
+
+.join-card {
+  background-color: var(--color-bg-dark-brown);
+  border-radius: var(--radius-four);
+  padding: 2rem;
+  color: white;
+}
+
+.join-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.join-card p {
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.team-card {
+  background-color: var(--color-bg-tan);
+  border-radius: var(--radius-four);
+  overflow: hidden;
+  display: flex;
+}
+
+.team-card img {
+  width: 40%;
+  object-fit: cover;
+}
+
+/* When no image is present, let content fill the full card */
+.team-card:not(:has(img)) .team-card-content {
+  width: 100%;
+}
+
+.team-card-content {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.team-card-content p {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-bg-footer);
+  color: var(--color-text-footer);
+  padding: 4rem 0 2rem;
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-col.brand h4 {
+  font-size: 1.2rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.footer-col p {
+  color: var(--color-text-footer);
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-col ul li a {
+  color: var(--color-text-footer);
+  opacity: 0.8;
+  text-decoration: none;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.footer-col ul li a:hover {
+  opacity: 1;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-box {
+    flex-direction: column;
+  }
+
+  .grid-3,
+  .tips-grid,
+  .tips-grid-bottom,
+  .about-grid-top,
+  .about-grid-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    flex-direction: column;
+  }
+
+  .team-card img {
+    width: 100%;
+    height: 250px;
+  }
+
+  .chart-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   Data Story Page Styling
+   ========================================= */
+.story-section {
+  margin-bottom: 4rem;
+}
+
+.chart-box {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  nav {
+    align-items: center;
+    gap: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .logo-container {
+    max-width: calc(100% - 50px);
+  }
+
+  .logo-container a {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .hero-content {
+    padding: 2.5rem 1.5rem;
+  }
+}

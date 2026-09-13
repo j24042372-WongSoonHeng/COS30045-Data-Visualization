@@ -1,104 +1,64 @@
-# Exercise 3 – Data Story: TV Energy Consumption
+# COS30045 – Data Visualisation  
+## Exercise 0.2 – Energy Website
 
-## Overview
+Welcome to **Exercise 0.2** for COS30045 Data Visualisation.
 
-In this exercise, you will develop a **data story** based on the **TV Energy Consumption dataset**. Using the website created in **Exercise 0.2**, you will extend your work to present a meaningful narrative supported by data visualisations.
-
-Your goal is to communicate insights from the dataset in a clear and engaging way through your **website and written explanation**.
-
-You must use the **Exercise 3 folder in your existing forked repository** and reuse the files created in **Exercise 0.2**.
+In this exercise, you will build a simple **Energy Data Webpage** using **HTML, CSS, and JavaScript**. The purpose of this exercise is to familiarise you with the development workflow using **GitHub and VS Code**, while preparing the foundation for future data visualisation tasks.
 
 ---
 
-## Data Story
+# Objective
 
-### Audience
+The objectives of this exercise are:
 
-The target audience for this visualisation includes:
-
-- Consumers interested in **energy-efficient televisions**
-- Policy makers and regulators interested in **energy consumption trends**
-- Researchers studying **energy efficiency in consumer electronics**
-
-These audiences are interested in understanding how **television energy consumption varies across models, sizes, and technologies**, and how these factors influence overall energy usage.
-
-### Story Overview
-
-This visualisation explores patterns in **TV energy consumption** across different television models and specifications.
-
-The goal is to help viewers understand:
-
-- How energy consumption varies between television models
-- The relationship between **screen size and power consumption**
-- How **energy efficiency ratings** impact energy usage
-- Trends that may help consumers choose more **energy-efficient televisions**
-
-The website presents these insights through visualisations and explanatory text that guide the viewer through the data.
+- Understand how to use **GitHub for version control**
+- Practice **web development structure**
+- Build a **basic website**
+- Maintain **regular commits**
+- Identify commits that include **GenAI-generated code**
 
 ---
 
-## About the Data
+# Step 1 – Fork the Repository
 
-### Data Source
+1. Open this repository.
+2. Click **Fork** at the top right of the page.
+3. This will create a copy of the repository in your GitHub account.
 
-The dataset used in this project contains information about **television models and their energy consumption characteristics**, including power usage, screen size, technology type, and efficiency ratings.
+Example:
 
-The dataset was provided as part of the course materials.
+Original repository : "github.com/rishmaf/COS30045-Data-Visualization/energy-webpage"
 
-### Data Processing
+Your forked repository : "github.com/yourusername/COS30045-Data-Visualization/energy-webpage"
 
-Before creating visualisations, the dataset was processed to ensure it was suitable for analysis. This included:
-
-- Cleaning missing or inconsistent values
-- Selecting relevant attributes for visualisation
-- Organising the data into formats suitable for web visualisation
-
-### Privacy
-
-The dataset does not contain any **personal or sensitive information**. It focuses solely on product specifications and energy consumption data related to television devices.
-
-### Accuracy and Limitations
-
-While the dataset provides useful information about TV energy consumption, there are some limitations:
-
-- The dataset may not include **all available television models**
-- Some information may be **outdated or incomplete**
-- Energy consumption may vary depending on **real-world usage conditions**
-
-These factors should be considered when interpreting the visualisations.
-
-### Ethics
-
-When presenting data visualisations, it is important to ensure that the information is represented **accurately and responsibly**.
-
-This project follows ethical data visualisation practices by:
-
-- Avoiding misleading visual representations
-- Clearly explaining the context of the data
-- Presenting information transparently so viewers can interpret the results correctly
 
 ---
 
-## AI Declaration
+# Step 2 – Clone the Repository
 
-Artificial Intelligence (AI) tools may have been used to assist with aspects of this assignment, such as:
+Clone your forked repository to your local machine using **VS Code** or the terminal.
 
-- Generating example code
-- Improving code structure
-- Assisting with documentation writing
 
-All AI-generated assistance was reviewed, modified where necessary, and integrated responsibly into the project.
 
----
+# Step 3 – Project Structure
 
-## Website Storytelling
 
-The website has been updated to communicate a **data-driven story** based on the TV energy consumption dataset.
+Your project must follow the structure below.
 
-The website includes:
-
-- Visualisations that present key insights from the dataset
-- Text explanations that help readers understand the meaning of the visualisations
-- Context that connects the data to real-world implications
-
-The aim is to guide the viewer through the data in a way that is **informative, engaging, and easy to understand**.
+```bash
+energy-webpage-v1
+│
+├── css
+│   └── styles.css
+│
+├── js
+│   └── scripts.js
+│
+├── images
+│   └── PowerIcon.png
+│
+├── data
+│   └── data.csv
+│
+├── index.html
+└── README.md

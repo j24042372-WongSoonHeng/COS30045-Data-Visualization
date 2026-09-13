@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Story - Appliance Energy Consumption</title>
+    <meta name="description"
+        content="Discover what TV size actually suits your home and how screen size and technology affect energy consumption.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="assets/img/PowerIcon.png" alt="Power Logo">
+                        Appliance Energy Consumption Website
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="televisions.html">Televisions</a></li>
+                    <li><a href="data-story.html" class="active">Data Story</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 1. Issue（开场问题） -->
+        <section class="hero-box">
+            <div class="hero-content">
+                <h1>Do You Know What TV Size Actually Suits Your Home?</h1>
+                <p>People don't know what TV size actually suits their home, or how much energy it uses.
+                    Most people just pick a size based on their room or their budget, without thinking about the power
+                    bill.</p>
+                <a href="#demonstrate-issue" class="btn btn-primary">Explore the Story</a>
+            </div>
+            <div class="hero-image hero-image--padded">
+                <img src="assets/img/data_story_hero.jpg"
+                    alt="Comparison of TV sizes and energy footprint in living room">
+            </div>
+        </section>
+
+        <!-- 2. Demonstrate Issue（证明问题存在） -->
+        <section id="demonstrate-issue" class="story-section">
+            <h2>Demonstrate Issue</h2>
+            <p>Most TVs sold are between 55" and 65", and Samsung is currently the top brand by number of models.
+                But most buyers rarely check how screen size affects energy use before they buy — the focus is usually
+                on brand, price or picture quality.</p>
+            <div class="tips-grid-bottom">
+                <!-- Pie Chart：品牌市占 -->
+                <div class="card chart-card">
+                    <img src="assets/img/Market Share.png" alt="Pie Chart: Market Share by Brand">
+                </div>
+                <!-- Histogram：尺寸分布 -->
+                <div class="card chart-card">
+                    <img src="assets/img/size_distribution.png" alt="Histogram: Size Distribution">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Describe the Approach（描述做法） -->
+        <section class="story-section">
+            <h2>Describe the Approach</h2>
+            <p>If shoppers could easily see how much energy different TV sizes use,
+                they could make a more informed choice before buying — not just after
+                the power bill arrives. To explore this, screen size was compared against yearly energy consumption
+                (kWh/year) using a scatter plot, which shows a clear upward trend — the bigger the screen, the more
+                energy it uses.</p>
+            <div class="tips-grid-bottom">
+                <!-- Bar Chart -->
+                <div class="card chart-card">
+                    <img src="assets/img/Size vs Energy.png" alt="Scatter Plot: Size vs Energy">
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Show the Evidence（数据证明） -->
+        <section class="story-section">
+            <h2>Show the Evidence</h2>
+            <p>To make this easier to compare, TVs were grouped into Small, Medium and Large categories. The results are
+                clear — energy use roughly doubles at each size step. Bigger is not just more expensive to buy, it is
+                also more expensive to run every year.</p>
+            <!-- 面板技术对比 Bar Chart -->
+            <div class="tips-grid-bottom">
+                <div class="card chart-card">
+                    <img src="assets/img/Small vs Medium vs Large.png" alt="Bar Chart: Small vs Medium vs Large">
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Technology Matters Too -->
+        <section class="story-section">
+            <div class="tip-card highlight-bg">
+                <h2>Technology Matters Too</h2>
+                <p>Screen size is not the only factor. Panel technology matters too — some technologies use noticeably
+                    more energy than others, even at a similar size, so it is worth checking this alongside size.</p>
+                <div class="tips-grid-bottom">
+                    <div class="card chart-card">
+                        <img src="assets/img/LED vs OLED.png" alt="Bar Chart comparing LCD / LCD(LED)/OLED">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Recommendation（结论与建议） -->
+        <section class="story-section">
+            <div class="tip-card highlight-bg">
+                <h2>Recommendation</h2>
+                <p>Before buying a new TV, think about the size that actually fits your room, not just your budget or
+                    the
+                    picture quality — and take a look at the panel technology as well. Both of these can make a real
+                    difference to your power bill over time.</p>
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="televisions.html#size-matters" class="btn btn-primary">Size Matters</a>
+                    <a href="televisions.html#tech-breakdown" class="btn btn-outline">Technology Breakdown</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand">
+                    <h4>Appliance Energy Consumption Website</h4>
+                    <p>&copy; 2026 [Wong Soon Heng]. All rights reserved. This site was developed with the assistance of
+                        GenAI.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sitemap</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="televisions.html">Televisions</a></li>
+                        <li><a href="data-story.html">Data Story</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
