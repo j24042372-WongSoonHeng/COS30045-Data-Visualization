@@ -248,10 +248,6 @@ main {
   background-color: var(--color-bg-page);
 }
 
-.btn-full {
-  width: 100%;
-}
-
 /* Grid & Cards - Home Top Consumers */
 /* Shared Layouts & Cards */
 .grid-3,
@@ -284,8 +280,7 @@ main {
 
 .card p,
 .tip-card p,
-.team-card-content p,
-.image-overlay p {
+.team-card-content p {
   font-size: 0.9rem;
 }
 
@@ -391,13 +386,6 @@ main {
   padding-bottom: 0;
 }
 
-.tech-icon {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  color: var(--color-accent-orange);
-  font-size: 1.2rem;
-}
 
 .tech-card .avg-consumption {
   background-color: var(--color-bg-tan);
@@ -479,62 +467,6 @@ main {
 
 .about-grid-bottom {
   grid-template-columns: 1fr 2fr;
-}
-
-.image-card {
-  position: relative;
-  border-radius: var(--radius-four);
-  overflow: hidden;
-  min-height: 300px;
-}
-
-.image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.image-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2rem;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-  color: white;
-}
-
-.image-overlay h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: white;
-}
-
-.image-overlay p {
-  margin-bottom: 0;
-  color: white;
-}
-
-.join-card {
-  background-color: var(--color-bg-dark-brown);
-  border-radius: var(--radius-four);
-  padding: 2rem;
-  color: white;
-}
-
-.join-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-.join-card p {
-  font-size: 0.95rem;
-  margin-bottom: 2rem;
-  color: white;
 }
 
 .team-card {
@@ -649,10 +581,6 @@ footer {
     width: 100%;
     height: 250px;
   }
-
-  .chart-grid-2 {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* =========================================
@@ -660,11 +588,6 @@ footer {
    ========================================= */
 .story-section {
   margin-bottom: 4rem;
-}
-
-.chart-box {
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 @media (max-width: 600px) {
