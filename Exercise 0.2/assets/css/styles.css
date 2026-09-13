@@ -650,10 +650,61 @@ footer {
     height: 250px;
   }
 
-  .footer-grid {
+  .chart-grid-2 {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================
+   Data Story Page Styling
+   ========================================= */
+.story-section {
+  margin-bottom: 4rem;
+}
+
+.chart-box {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-placeholder {
+  border: 2px dashed var(--color-border-dark);
+  border-radius: var(--radius-four);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  background-color: var(--color-bg-page);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.placeholder-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.placeholder-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.placeholder-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+.placeholder-hint code {
+  background-color: var(--color-bg-tan);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+
 
 @media (max-width: 600px) {
   nav {
