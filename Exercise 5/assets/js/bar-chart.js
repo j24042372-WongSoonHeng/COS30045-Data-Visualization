@@ -103,7 +103,7 @@
             .attr("x", d => xScale(d.Screen_Tech) + xScale.bandwidth() / 2)
             .attr("y", d => yScale(d.Energy_Consumption) - 8)
             .attr("text-anchor", "middle")
-            .style("font-size", "12px")
+            .style("font-size", "14px")
             .style("font-weight", "500")
             .text(d => `${Math.round(d.Energy_Consumption)} kWh`);
     };

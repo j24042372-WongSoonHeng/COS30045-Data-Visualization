@@ -33,13 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnEx4 = document.getElementById("btn-chart-ex4");
     const btnEx5 = document.getElementById("btn-chart-ex5");
     const btnEx52 = document.getElementById("btn-chart-ex52");
+    const btnEx53 = document.getElementById("btn-chart-ex53");
     const chartEx4 = document.getElementById("horizontal-bar-chart");
     const chartEx5 = document.getElementById("bar-chart");
     const chartEx52 = document.getElementById("line-chart");
+    const chartEx53 = document.getElementById("donut-chart");
     const chartTitle = document.getElementById("chart-title");
 
-    const allButtons = [btnEx4, btnEx5, btnEx52];
-    const allCharts = [chartEx4, chartEx5, chartEx52];
+    const allButtons = [btnEx4, btnEx5, btnEx52, btnEx53];
+    const allCharts = [chartEx4, chartEx5, chartEx52, chartEx53];
 
     const switchChart = (activeBtn, activeChart, titleText) => {
         allButtons.forEach(btn => {
@@ -66,6 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnEx52) {
         btnEx52.addEventListener("click", () => {
             switchChart(btnEx52, chartEx52, "Electricity Spot Prices in Australia (1998-2024) (Exercise 5.2)");
+        });
+    }
+
+    if (btnEx53) {
+        btnEx53.addEventListener("click", () => {
+            switchChart(btnEx53, chartEx53, "Proportion of TV Models by Screen Size Category (Exercise 5.3)");
         });
     }
 });
