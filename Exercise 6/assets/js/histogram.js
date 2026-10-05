@@ -34,7 +34,7 @@ const drawHistogram = (data) => {
     // Draw the bars of the histogram
     innerChart
         .selectAll("rect")
-        .data(bins)
+        .data(bins, d => d.x0)
         .join("rect")
         .attr("class", "histogram-bar")
         .attr("x", d => xScale(d.x0))

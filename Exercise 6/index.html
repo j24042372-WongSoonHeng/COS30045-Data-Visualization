@@ -153,7 +153,8 @@
         <section class="card" style="margin-top: 2rem; background: var(--color-bg-white);">
             <div class="chart-header">
                 <h2 id="chart-title-ex6">TV Energy Consumption (Exercise 6.1)</h2>
-                <p class="chart-subtitle">Energy Consumption for different TV screen types and sizes (Jan 2026 dataset)</p>
+                <p class="chart-subtitle">Energy Consumption for different TV screen types and sizes (Jan 2026 dataset)
+                </p>
             </div>
 
             <div class="chart-switcher" id="switcher-ex6">
@@ -161,15 +162,19 @@
             </div>
 
             <div class="responsive-svg-container">
+                <!-- Exercise 6.2 Filter: Screen Types -->
+                <div id="filters_screen" class="filter-group"></div>
+
                 <!-- Exercise 6.1: TV Energy Consumption Histogram -->
                 <div id="histogram" class="chart-panel active"></div>
+
+                <!-- Exercise 6.2 Extension Filter: Screen Sizes -->
+                <div id="filters_size" class="filter-group"></div>
             </div>
 
             <div class="chart-source-info">
                 <strong>Data source:</strong><br>
-                <a href="https://reg.energyrating.gov.au/gehrs/appliance/television/" target="_blank" rel="noopener noreferrer">
-                    Energy Rating Data for household appliances – Televisions
-                </a><br>
+                <p>Energy Rating Data for household appliances – Televisions</p>
                 <span>Downloaded Jan 2026 | &copy; Data Visualisation Week 6</span>
             </div>
         </section>

@@ -59,3 +59,45 @@ rect.histogram-bar:hover,
     color: var(--color-accent-orange, #f09b24);
     text-decoration: underline;
 }
+
+/* Exercise 6.2 Filter Buttons */
+.filter-group {
+    display: flex;
+    gap: 0.6rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#filters_screen {
+    margin-bottom: 0.5rem;
+}
+
+#filters_size {
+    margin-top: 0.75rem;
+}
+
+button.filter {
+    background-color: #c96513;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+button.filter:hover {
+    background-color: #b3560c;
+    transform: translateY(-1px);
+}
+
+button.filter.active {
+    background-color: #f7bc61;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
