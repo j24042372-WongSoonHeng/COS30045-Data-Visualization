@@ -2,7 +2,7 @@
 
 (() => {
     // Set up inner chart margins and dimensions
-    const margin = { top: 40, right: 40, bottom: 50, left: 50 };
+    const margin = { top: 60, right: 40, bottom: 50, left: 55 };
     const width = 1000;
     const height = 500;
     const innerWidth = width - margin.left - margin.right;
@@ -47,9 +47,9 @@
             .range([0, innerWidth])
             .padding(0.1);
 
-        // Energy consumption on y-axis
+        // Energy consumption on y-axis (domain up to 400 to give breathing room for 369 kWh)
         const yScale = d3.scaleLinear()
-            .domain([0, d3.max(data, d => d.Energy_Consumption)])
+            .domain([0, 400])
             .range([innerHeight, 0]);
 
         // Calculate axes
@@ -75,8 +75,8 @@
         innerChart
             .append("text")
             .attr("class", "axis-label")
-            .attr("x", -40)
-            .attr("y", -15)
+            .attr("x", -45)
+            .attr("y", -20)
             .attr("text-anchor", "start")
             .style("font-size", "14px")
             .style("font-weight", "600")
