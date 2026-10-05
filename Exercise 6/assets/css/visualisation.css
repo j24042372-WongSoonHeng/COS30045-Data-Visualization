@@ -13,6 +13,18 @@ rect.histogram-bar:hover,
     opacity: 0.85;
 }
 
+/* Scatterplot Circle Styles (Exercise 6.3) */
+circle.scatter-circle {
+    transition: r 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+}
+
+circle.scatter-circle:hover {
+    opacity: 1 !important;
+    stroke: #ffffff;
+    stroke-width: 1.5px;
+}
+
 /* Axis Styling for Charts */
 .axis text {
     font-family: 'Hanken Grotesk', sans-serif;

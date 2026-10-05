@@ -89,3 +89,15 @@ const populateFilters = (data) => {
             });
     }
 };
+
+// Exercise 6.4: Tooltip function placeholders
+const createTooltip = () => {
+    // Will be fully implemented in Exercise 6.4
+    console.log("createTooltip initialized");
+};
+
+const handleMouseEvents = () => {
+    // Will be fully implemented in Exercise 6.4
+    console.log("handleMouseEvents initialized");
+};
+

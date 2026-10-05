@@ -32,13 +32,18 @@ const filters_screen = [
     { id: "OLED", label: "OLED", isActive: false }
 ];
 
-// Extension: Array of filter options for screen sizes
-const filters_size = [
-    { id: "all", label: "All Sizes", isActive: true },
-    { id: "24", label: "24\"", isActive: false },
-    { id: "32", label: "32\"", isActive: false },
-    { id: "55", label: "55\"", isActive: false },
-    { id: "65", label: "65\"", isActive: false },
-    { id: "98", label: "98\"", isActive: false }
-];
+// Exercise 6.3 Scatterplot Shared Constants
+let innerChartS; // To be attached to scatterplot svg in scatterplot.js
+const xScaleS = d3.scaleLinear();
+const yScaleS = d3.scaleLinear();
+
+// Colour scale for screen types (Hue based: LED, LCD, OLED)
+const colorScale = d3.scaleOrdinal()
+    .domain(["LED", "LCD", "OLED"])
+    .range(["#2b5c8f", "#d95f02", "#7570b3"]);
+
+// Tooltip dimensions and constants for Exercise 6.4
+const tooltipWidth = 130;
+const tooltipHeight = 45;
+
 

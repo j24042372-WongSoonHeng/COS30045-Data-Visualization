@@ -79,11 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Chart Switcher (Exercise 6)
     const btnEx61 = document.getElementById("btn-chart-ex61");
-    const chartEx61 = document.getElementById("histogram");
+    const btnEx63 = document.getElementById("btn-chart-ex63");
+    const chartEx61 = document.getElementById("histogram-view");
+    const chartEx63 = document.getElementById("scatterplot-view");
     const chartTitleEx6 = document.getElementById("chart-title-ex6");
 
-    const allButtonsEx6 = [btnEx61];
-    const allChartsEx6 = [chartEx61];
+    const allButtonsEx6 = [btnEx61, btnEx63];
+    const allChartsEx6 = [chartEx61, chartEx63];
 
     const switchChartEx6 = (activeBtn, activeChart, titleText) => {
         allButtonsEx6.forEach(btn => {
@@ -97,7 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnEx61) {
         btnEx61.addEventListener("click", () => {
-            switchChartEx6(btnEx61, chartEx61, "TV Energy Consumption (Exercise 6.1)");
+            switchChartEx6(btnEx61, chartEx61, "TV Energy Consumption (Exercise 6.1 & 6.2)");
+        });
+    }
+
+    if (btnEx63) {
+        btnEx63.addEventListener("click", () => {
+            switchChartEx6(btnEx63, chartEx63, "Energy Consumption vs. Star Rating (Exercise 6.3)");
         });
     }
 });

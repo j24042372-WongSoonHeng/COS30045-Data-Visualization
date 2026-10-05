@@ -158,18 +158,27 @@
             </div>
 
             <div class="chart-switcher" id="switcher-ex6">
-                <button id="btn-chart-ex61" class="btn btn-primary" type="button">Histogram (Ex 6.1)</button>
+                <button id="btn-chart-ex61" class="btn btn-primary" type="button">Histogram (Ex 6.1 & 6.2)</button>
+                <button id="btn-chart-ex63" class="btn btn-outline" type="button">Scatterplot (Ex 6.3)</button>
             </div>
 
             <div class="responsive-svg-container">
-                <!-- Exercise 6.2 Filter: Screen Types -->
-                <div id="filters_screen" class="filter-group"></div>
+                <!-- Exercise 6.1 & 6.2: TV Energy Consumption Histogram with Filters -->
+                <div id="histogram-view" class="chart-panel active">
+                    <!-- Exercise 6.2 Filter: Screen Types -->
+                    <div id="filters_screen" class="filter-group"></div>
 
-                <!-- Exercise 6.1: TV Energy Consumption Histogram -->
-                <div id="histogram" class="chart-panel active"></div>
+                    <!-- Histogram Container -->
+                    <div id="histogram"></div>
 
-                <!-- Exercise 6.2 Extension Filter: Screen Sizes -->
-                <div id="filters_size" class="filter-group"></div>
+                    <!-- Exercise 6.2 Extension Filter: Screen Sizes -->
+                    <div id="filters_size" class="filter-group"></div>
+                </div>
+
+                <!-- Exercise 6.3: TV Energy vs Star Rating Scatterplot -->
+                <div id="scatterplot-view" class="chart-panel">
+                    <div id="scatterplot"></div>
+                </div>
             </div>
 
             <div class="chart-source-info">
@@ -214,10 +223,11 @@
     <script src="assets/js/line-chart.js"></script>
     <script src="assets/js/donut-chart.js"></script>
 
-    <!-- Exercise 6: Histogram & Interaction Scripts (Order is important) -->
+    <!-- Exercise 6: Visualisations & Interactivity (Order is important) -->
     <script src="assets/js/shared-constants.js"></script>
     <script src="assets/js/interactions.js"></script>
     <script src="assets/js/histogram.js"></script>
+    <script src="assets/js/scatterplot.js"></script>
     <script src="assets/js/load-data.js"></script>
 </body>
 
