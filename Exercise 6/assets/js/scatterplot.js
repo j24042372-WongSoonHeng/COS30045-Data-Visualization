@@ -14,7 +14,7 @@ const drawScatterplot = (data) => {
     // Star rating on x-axis (0 to max star rating with breathing room)
     const maxStar = d3.max(data, d => d.star) || 10;
     xScaleS
-        .domain([0, Math.ceil(maxStar)])
+        .domain([0, Math.ceil(maxStar) + 1])
         .range([0, innerWidth])
         .nice();
 
