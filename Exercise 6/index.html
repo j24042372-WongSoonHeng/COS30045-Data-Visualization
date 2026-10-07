@@ -4,226 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Appliance Energy Consumption</title>
-    <meta name="description" content="Explore and understand appliance energy consumption in the Australian market.">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Responsive D3 Chart</title>
+    <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/visualisation.css">
 </head>
 
 <body>
 
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo-container">
-                    <a href="index.html">
-                        <img src="assets/img/PowerIcon.png" alt="Power Logo">
-                        Appliance Energy Consumption Website
-                    </a>
-                </div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="televisions.html">Televisions</a></li>
-                    <li><a href="data-story.html">Data Story</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>TV Energy Consumption</h1>
     </header>
 
-    <main class="container">
-        <!-- Hero Section -->
-        <section class="hero-box">
-            <div class="hero-content">
-                <h1>Understand Your Appliance Energy Usage</h1>
-                <p>Empowering Australian households with clear, actionable data on energy consumption to make informed
-                    decisions and reduce bills.</p>
-                <a href="televisions.html" class="btn btn-primary">Explore Appliances</a>
-                <a href="data-story.html" class="btn btn-primary">Explore the TV Energy Story</a>
-            </div>
-            <div class="hero-image hero-image--padded">
-                <img src="assets/img/home_hero.png" alt="Modern Australian kitchen">
-            </div>
-        </section>
+    <main>
+        <div>
+            <h1>Energy Consumption for different TV screen types and sizes</h1>
+            <p>TV's vary considerably in energy consumption.</p>
+        </div>
 
-        <!-- Top Energy Consumers Section -->
-        <section>
-            <h2>Top Energy Consumers</h2>
-            <p>While appliances like ovens and dryers draw the most power, this site takes a closer look at televisions
-                — one of the most common household electronics.</p>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Electric Oven</h3>
-                    <div class="stat-block">
-                        <span class="stat-number">1533</span>
-                        <span class="stat-unit">kWh/year</span>
-                    </div>
-                    <p>Based on 2 hours of use per day (AGL, 2023).</p>
-                </div>
+        <div id="filters_histogram"></div>
+        <div id="histogram" class="responsive-svg-container"></div>
 
-                <div class="card">
-                    <h3>Electric Stovetop</h3>
-                    <div class="stat-block">
-                        <span class="stat-number">1602</span>
-                        <span class="stat-unit">kWh/year</span>
-                    </div>
-                    <p>Based on a 2200W large cooktop, 2 hours per day (AGL, 2023).</p>
-                </div>
+        <div id="filters_scatterplot"></div>
+        <div id="scatterplot" class="responsive-svg-container"></div>
 
-                <div class="card">
-                    <h3>Dryer</h3>
-                    <div class="stat-block">
-                        <span class="stat-number">927</span>
-                        <span class="stat-unit">kWh/year</span>
-                    </div>
-                    <p>Based on a vented dryer (5-10kg), 3 loads per week (AGL, 2023).</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How is the kWh/year calculated?</span>
-                        <span class="faq-icon"></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>The kWh/year is calculated based on standard testing procedures under typical
-                            usage conditions in Australian homes over a 365-day period.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What does the star rating mean?</span>
-                        <span class="faq-icon"></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>The star rating represents the appliance's energy efficiency
-                            compared to other models of the same size and capacity. More stars mean more efficiency.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How can I reduce my standby power?</span>
-                        <span class="faq-icon"></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>You can reduce standby power by unplugging appliances when
-                            not in use or using smart power strips that cut power to peripheral devices.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- D3 Charts Section with Switcher -->
-        <section class="card" style="margin-top: 2rem; background: var(--color-bg-white);">
-            <h2 id="chart-title">TV Models by Brand (Exercise 4)</h2>
-            <div class="chart-switcher">
-                <button id="btn-chart-ex4" class="btn btn-primary" type="button">TV Models (Ex 4)</button>
-                <button id="btn-chart-ex5" class="btn btn-outline" type="button">55" TV Energy (Ex 5.1)</button>
-                <button id="btn-chart-ex52" class="btn btn-outline" type="button">Electricity Prices (Ex 5.2)</button>
-                <button id="btn-chart-ex53" class="btn btn-outline" type="button">TV Size Proportion (Ex 5.3)</button>
-            </div>
-
-            <div class="responsive-svg-container">
-                <!-- Exercise 4: Horizontal Bar Chart -->
-                <div id="horizontal-bar-chart" class="chart-panel active"></div>
-
-                <!-- Exercise 5.1: Vertical Bar Chart with Axis -->
-                <div id="bar-chart" class="chart-panel"></div>
-
-                <!-- Exercise 5.2: Scatter Plot & Line Chart -->
-                <div id="line-chart" class="chart-panel"></div>
-
-                <!-- Exercise 5.3: Donut Chart -->
-                <div id="donut-chart" class="chart-panel"></div>
-            </div>
-        </section>
-
-        <!-- Exercise 6: Interactive TV Energy Exploration (New Switcher) -->
-        <section class="card" style="margin-top: 2rem; background: var(--color-bg-white);">
-            <div class="chart-header">
-                <h2 id="chart-title-ex6">TV Energy Consumption (Exercise 6.1)</h2>
-                <p class="chart-subtitle">Energy Consumption for different TV screen types and sizes (Jan 2026 dataset)
-                </p>
-            </div>
-
-            <div class="chart-switcher" id="switcher-ex6">
-                <button id="btn-chart-ex61" class="btn btn-primary" type="button">Histogram (Ex 6.1 & 6.2)</button>
-                <button id="btn-chart-ex63" class="btn btn-outline" type="button">Scatterplot (Ex 6.3)</button>
-            </div>
-
-            <div class="responsive-svg-container">
-                <!-- Exercise 6.1 & 6.2: TV Energy Consumption Histogram with Filters -->
-                <div id="histogram-view" class="chart-panel active">
-                    <!-- Exercise 6.2 Filter: Screen Types -->
-                    <div id="filters_screen" class="filter-group"></div>
-
-                    <!-- Histogram Container -->
-                    <div id="histogram"></div>
-
-                    <!-- Exercise 6.2 Extension Filter: Screen Sizes -->
-                    <div id="filters_size" class="filter-group"></div>
-                </div>
-
-                <!-- Exercise 6.3: TV Energy vs Star Rating Scatterplot -->
-                <div id="scatterplot-view" class="chart-panel">
-                    <div id="scatterplot"></div>
-                </div>
-            </div>
-
-            <div class="chart-source-info">
-                <strong>Data source:</strong><br>
-                <p>Energy Rating Data for household appliances – Televisions</p>
-                <span>Downloaded Jan 2026 | &copy; Data Visualisation Week 6</span>
-            </div>
-        </section>
+        <div class="body">
+            <h3>Data source</h3>
+            <p>
+                <a href="https://data.gov.au/data/dataset/energy-rating-for-household-appliances">
+                    Energy Rating Data for household appliances – Televisions
+                </a><br>
+                Downloaded Jan 2026
+            </p>
+        </div>
     </main>
 
+
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col brand">
-                    <h4>Appliance Energy Consumption Website</h4>
-                    <p>&copy; 2026 [Wong Soon Heng]. All rights reserved. This site was developed with the assistance of
-                        GenAI.
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h4>Sitemap</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="televisions.html">Televisions</a></li>
-                        <li><a href="data-story.html">Data Story</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <p>&copy; Data Visualisation Week 6</p>
     </footer>
 
-    <!-- D3 Library -->
+
     <script src="https://d3js.org/d3.v7.min.js"></script>
-
-    <!-- UI Scripts -->
-    <script src="assets/js/scripts.js"></script>
-
-    <!-- Exercise 4 & 5 Charts -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/bar-chart.js"></script>
-    <script src="assets/js/line-chart.js"></script>
-    <script src="assets/js/donut-chart.js"></script>
-
-    <!-- Exercise 6: Visualisations & Interactivity (Order is important) -->
     <script src="assets/js/shared-constants.js"></script>
     <script src="assets/js/interactions.js"></script>
     <script src="assets/js/histogram.js"></script>

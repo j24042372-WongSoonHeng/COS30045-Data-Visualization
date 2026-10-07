@@ -1,25 +1,25 @@
-// load-data.js - Load TV dataset and initialize Exercise 6 charts
+let tvData = [];
 
-// Load the CSV file with a row conversion function
-d3.csv("assets/Data/Ex6_TVdata_withStar.csv", d => ({
-    brand: d.brand,
-    model: d.model,
-    screenSize: +d.screenSize, // Convert screenSize to a number
-    screenTech: d.screenTech,
-    energyConsumption: +d.energyConsumption, // Convert energyConsumption to a number
-    star: +d.star // Convert to number
-})).then(data => {
-    // Log the processed data to the console
-    console.log("Loaded TV Data (Exercise 6):", data);
+d3.csv("assets/data/Ex6_TVdata_withSTAR.csv", d => {
+    return {
+        brand: d.brand,
+        model: d.model,
+        screenSize: +d.screenSize,
+        screenTech: d.screenTech,
+        energyConsumption: +d.energyConsumption,
+        star: +d.star
+    };
+}).then(data => {
+    tvData = data;
+    console.log("Loaded TV Data:", tvData);
 
-    // Call functions after data is loaded
-    drawHistogram(data);
-    populateFilters(data);
+    drawHistogram(tvData);
+    populateFilters(tvData);
 
-    // Exercise 6.3 & 6.4: Scatterplot and tooltip activation
-    drawScatterplot(data);
+    drawScatterplot(tvData);
+
     createTooltip();
     handleMouseEvents();
 }).catch(error => {
-    console.error("Error loading the CSV file:", error);
+    console.error("Error loading CSV:", error);
 });

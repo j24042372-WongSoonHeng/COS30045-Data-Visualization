@@ -1,115 +1,60 @@
-/* Shared CSS for Visualisations (Exercise 6) */
+/* Responsive container of the svg element */
 
-/* Histogram Bar Styles */
-rect.histogram-bar,
-.histogram-bar {
-    transition: fill 0.2s ease, opacity 0.2s ease;
-    cursor: pointer;
+.responsive-svg-container {
+
+    width: 100%;
+
+    max-width: 1000px;
+
 }
 
-rect.histogram-bar:hover,
-.histogram-bar:hover {
-    fill: #e07a10 !important;
-    opacity: 0.85;
+@media screen and (max-width: 596px) {
+
+    .responsive-svg-container {
+
+        margin-bottom: 20px;
+
+    }
+
 }
 
-/* Scatterplot Circle Styles (Exercise 6.3) */
-circle.scatter-circle {
-    transition: r 0.2s ease, opacity 0.2s ease;
-    cursor: pointer;
-}
 
-circle.scatter-circle:hover {
-    opacity: 1 !important;
-    stroke: #ffffff;
-    stroke-width: 1.5px;
-}
 
-/* Axis Styling for Charts */
-.axis text {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 11px;
-    fill: var(--color-text-main, #4a4036);
-}
 
-.axis path,
-.axis line {
-    stroke: #8c7355;
-    stroke-width: 1px;
-}
-
-/* Axis Labels */
 .axis-label {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    fill: var(--color-text-main, #4a4036);
+
+    font-family: 'Roboto', sans-serif;
+
+    font-size: 14px;
+
+    fill: #5a3e2b;
+    /* Dark brown */
+
 }
 
-/* Chart Title inside Card */
-.chart-header {
-    margin-bottom: 1rem;
+
+#filters_histogram,
+#filters_scatterplot {
+    margin-bottom: 12px;
 }
 
-.chart-subtitle {
-    font-size: 0.95rem;
-    color: var(--color-text-light, #706355);
-    margin-top: 0.25rem;
-    margin-bottom: 1rem;
-}
-
-/* Source metadata block */
-.chart-source-info {
-    margin-top: 1.5rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--color-border, #e6dfd5);
-    font-size: 0.85rem;
-    color: var(--color-text-light, #706355);
-}
-
-.chart-source-info a {
-    color: var(--color-accent-orange, #f09b24);
-    text-decoration: underline;
-}
-
-/* Exercise 6.2 Filter Buttons */
-.filter-group {
-    display: flex;
-    gap: 0.6rem;
-    margin: 1rem 0;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-#filters_screen {
-    margin-bottom: 0.5rem;
-}
-
-#filters_size {
-    margin-top: 0.75rem;
-}
-
-button.filter {
-    background-color: #c96513;
-    color: #ffffff;
+#filters_histogram .filter,
+#filters_scatterplot .filter {
+    background-color: #d97706;
+    color: white;
     border: none;
-    padding: 0.5rem 1.25rem;
-    font-size: 0.95rem;
-    font-weight: 600;
+    padding: 6px 16px;
+    margin-right: 8px;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    font-weight: bold;
+    font-size: 13px;
 }
 
-button.filter:hover {
-    background-color: #b3560c;
-    transform: translateY(-1px);
+#filters_histogram .filter.active,
+#filters_scatterplot .filter.active {
+    background-color: #fde68a;
+    color: #b45309;
 }
 
-button.filter.active {
-    background-color: #f7bc61;
-    color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-}
-
+/* Code based on Dufour and Meeks (2024) */
