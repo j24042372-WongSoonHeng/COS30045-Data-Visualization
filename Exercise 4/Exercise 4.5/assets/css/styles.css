@@ -1,29 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;600;700&display=swap');
 
-:root {
-  --color-bg-page: #fbfaf8;
-  --color-bg-white: #ffffff;
-  --color-bg-tan: #f5efe6;
-  --color-bg-dark-brown: #8c7355;
-  /* for some cards like kill standby */
-  --color-bg-footer: #3c352d;
-
-  --color-text-main: #4a4036;
-  --color-text-light: #706355;
-  --color-text-footer: #e8e3dc;
-
-  --color-accent-orange: #f09b24;
-  --color-accent-orange-hover: #d88a1e;
-
-  --color-border: #e6dfd5;
-  --color-border-dark: #d2c8bc;
-
-  --radius-four: 8px;
-  --radius-hero: 12px;
-  --shadow-sm: 0 2px 8px rgba(74, 64, 54, 0.05);
-
-  --transition-speed: 0.3s;
-}
 
 * {
   margin: 0;
@@ -33,20 +9,20 @@
 
 body {
   font-family: 'Hanken Grotesk', sans-serif;
-  background-color: var(--color-bg-page);
-  color: var(--color-text-main);
+  background-color: #fbfaf8;
+  color: #4a4036;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Typography */
+
 h1,
 h2,
 h3,
 h4 {
-  color: var(--color-text-main);
+  color: #4a4036;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -67,22 +43,22 @@ h3 {
 }
 
 p {
-  color: var(--color-text-light);
+  color: #706355;
   font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
-/* Layout Utilities */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* Header & Navigation */
+
 header {
-  background-color: var(--color-bg-white);
-  border-bottom: 1px solid var(--color-border);
+  background-color: #ffffff;
+  border-bottom: 1px solid #e6dfd5;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -102,7 +78,7 @@ nav {
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-text-main);
+  color: #4a4036;
   gap: 0.5rem;
 }
 
@@ -121,7 +97,7 @@ nav {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background-color: var(--color-text-main);
+  background-color: #4a4036;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
@@ -134,16 +110,16 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--color-text-light);
+  color: #706355;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.5rem 0;
   position: relative;
-  transition: color var(--transition-speed) ease;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--color-text-main);
+  color: #4a4036;
 }
 
 .nav-links a::after {
@@ -153,12 +129,12 @@ nav {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--color-text-main);
-  transition: width var(--transition-speed) ease;
+  background-color: #4a4036;
+  transition: width 0.3s ease;
 }
 
 .nav-links a.active {
-  color: var(--color-text-main);
+  color: #4a4036;
 }
 
 .nav-links a.active::after {
@@ -169,16 +145,16 @@ nav {
   width: 100%;
 }
 
-/* Main Content Area */
+
 main {
   flex-grow: 1;
   padding-bottom: 4rem;
 }
 
-/* Hero Box Layout */
+
 .hero-box {
-  background-color: var(--color-bg-tan);
-  border-radius: var(--radius-hero);
+  background-color: #f5efe6;
+  border-radius: 12px;
   margin-top: 2rem;
   margin-bottom: 4rem;
   display: flex;
@@ -197,7 +173,7 @@ main {
   min-height: 400px;
 }
 
-/* Modifier for hero images that need inner padding (e.g. Televisions) */
+
 .hero-image.hero-image--padded {
   padding: 2rem;
 }
@@ -210,46 +186,46 @@ main {
 }
 
 .hero-image--padded img {
-  border-radius: var(--radius-four);
-  box-shadow: var(--shadow-sm);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(74, 64, 54, 0.05);
 }
 
-/* Buttons */
+
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-four);
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  transition: all var(--transition-speed) ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   border: none;
   text-align: center;
 }
 
 .btn-primary {
-  background-color: var(--color-accent-orange);
+  background-color: #f09b24;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-accent-orange-hover);
+  background-color: #d88a1e;
 }
 
 .btn-outline {
   background-color: transparent;
-  border: 1px solid var(--color-border-dark);
-  color: var(--color-text-main);
+  border: 1px solid #d2c8bc;
+  color: #4a4036;
 }
 
 .btn-outline:hover {
-  border-color: var(--color-text-main);
-  background-color: var(--color-bg-page);
+  border-color: #4a4036;
+  background-color: #fbfaf8;
 }
 
-/* Grid & Cards - Home Top Consumers */
-/* Shared Layouts & Cards */
+
+
 .grid-3,
 .tips-grid,
 .tips-grid-bottom,
@@ -273,9 +249,9 @@ main {
 .card,
 .faq-item,
 .tip-card {
-  background-color: var(--color-bg-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-four);
+  background-color: #ffffff;
+  border: 1px solid #e6dfd5;
+  border-radius: 8px;
 }
 
 .card p,
@@ -284,7 +260,7 @@ main {
   font-size: 0.9rem;
 }
 
-/* Specific Grid Layouts */
+
 .grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -302,14 +278,14 @@ main {
 .card .stat-number {
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--color-accent-orange);
+  color: #f09b24;
   line-height: 1;
   margin-bottom: 1rem;
 }
 
 .card .stat-unit {
   font-size: 1rem;
-  color: var(--color-text-light);
+  color: #706355;
   font-weight: 600;
 }
 
@@ -318,7 +294,7 @@ main {
   padding-top: 1rem;
 }
 
-/* FAQ Section */
+
 .faq-section {
   margin-bottom: 4rem;
 }
@@ -340,7 +316,7 @@ main {
   align-items: center;
   cursor: pointer;
   font-weight: 600;
-  color: var(--color-text-main);
+  color: #4a4036;
   user-select: none;
 }
 
@@ -350,15 +326,15 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform var(--transition-speed) ease;
+  transition: transform 0.3s ease;
 }
 
 .faq-icon::before {
   content: '';
   width: 10px;
   height: 10px;
-  border-right: 2px solid var(--color-text-light);
-  border-bottom: 2px solid var(--color-text-light);
+  border-right: 2px solid #706355;
+  border-bottom: 2px solid #706355;
   transform: rotate(45deg);
 }
 
@@ -371,7 +347,7 @@ main {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: all var(--transition-speed) ease;
+  transition: all 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
@@ -380,7 +356,7 @@ main {
   opacity: 1;
 }
 
-/* Television Tech Breakdown */
+
 .tech-card {
   position: relative;
   padding-bottom: 0;
@@ -388,17 +364,17 @@ main {
 
 
 .tech-card .avg-consumption {
-  background-color: var(--color-bg-tan);
+  background-color: #f5efe6;
   margin: auto -1.5rem 0 -1.5rem;
   padding: 1rem 1.5rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #e6dfd5;
 }
 
 .tech-card .avg-label {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-text-light);
+  color: #706355;
   margin-bottom: 0.25rem;
 }
 
@@ -417,7 +393,7 @@ main {
   font-size: 0.9rem;
 }
 
-/* Energy Saving Tips Grid */
+
 .tips-grid {
   grid-template-columns: 2fr 1fr;
 }
@@ -431,7 +407,7 @@ main {
 }
 
 .tip-card.highlight-bg {
-  background-color: var(--color-bg-tan);
+  background-color: #f5efe6;
   border: none;
 }
 
@@ -440,7 +416,7 @@ main {
 }
 
 .tip-card.dark-bg {
-  background-color: var(--color-bg-dark-brown);
+  background-color: #8c7355;
   border: none;
   color: white;
 }
@@ -457,7 +433,7 @@ main {
 
 .tip-icon {
   margin-bottom: 1rem;
-  color: var(--color-accent-orange);
+  color: #f09b24;
   font-size: 1.5rem;
 }
 
@@ -470,8 +446,8 @@ main {
 }
 
 .team-card {
-  background-color: var(--color-bg-tan);
-  border-radius: var(--radius-four);
+  background-color: #f5efe6;
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
 }
@@ -481,7 +457,7 @@ main {
   object-fit: cover;
 }
 
-/* When no image is present, let content fill the full card */
+
 .team-card:not(:has(img)) .team-card-content {
   width: 100%;
 }
@@ -503,10 +479,10 @@ main {
   margin-bottom: 1rem;
 }
 
-/* Footer */
+
 footer {
-  background-color: var(--color-bg-footer);
-  color: var(--color-text-footer);
+  background-color: #3c352d;
+  color: #e8e3dc;
   padding: 4rem 0 2rem;
   font-size: 0.9rem;
 }
@@ -533,7 +509,7 @@ footer {
 }
 
 .footer-col p {
-  color: var(--color-text-footer);
+  color: #e8e3dc;
   font-size: 0.85rem;
   opacity: 0.8;
   margin-bottom: 0.5rem;
@@ -548,10 +524,10 @@ footer {
 }
 
 .footer-col ul li a {
-  color: var(--color-text-footer);
+  color: #e8e3dc;
   opacity: 0.8;
   text-decoration: none;
-  transition: opacity var(--transition-speed) ease;
+  transition: opacity 0.3s ease;
 }
 
 .footer-col ul li a:hover {
@@ -559,7 +535,7 @@ footer {
   color: white;
 }
 
-/* Responsive */
+
 @media (max-width: 900px) {
   .hero-box {
     flex-direction: column;
@@ -583,9 +559,7 @@ footer {
   }
 }
 
-/* =========================================
-   Data Story Page Styling
-   ========================================= */
+
 .story-section {
   margin-bottom: 4rem;
 }
@@ -619,7 +593,7 @@ footer {
     gap: 1rem;
     padding-top: 1rem;
     margin-top: 0.5rem;
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid #e6dfd5;
   }
 
   .nav-links.active {
@@ -640,7 +614,7 @@ footer {
   }
 }
 
-/* Responsive SVG Container for D3 (Exercise 4.3) */
+
 .responsive-svg-container {
   margin-right: auto;
   margin-left: auto;
