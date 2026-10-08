@@ -1,20 +1,17 @@
 // Exercise 5.1: Vertical Bar Chart with Axis
 
 (() => {
-    // Set up inner chart margins and dimensions
     const margin = { top: 60, right: 40, bottom: 50, left: 55 };
     const width = 1000;
     const height = 500;
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
 
-    // Add the svg container for our chart inside #bar-chart
     const svg = d3.select("#bar-chart")
         .append("svg")
         .attr("viewBox", `0 0 ${width} ${height}`)
         .style("border", "1px solid black");
 
-    // Create inner chart group and apply margins
     const innerChart = svg
         .append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
@@ -28,11 +25,9 @@
     }).then(data => {
         console.log("Loaded Exercise 5.1 Data:", data);
 
-        // Sort the energy consumption data descending
         data.sort((a, b) => b.Energy_Consumption - a.Energy_Consumption);
         console.log("Sorted Data (descending):", data);
 
-        // Call drawBarChart to render the chart
         drawBarChart(data);
     }).catch(error => {
         console.error("Error loading CSV file:", error);
@@ -40,38 +35,30 @@
 
     // Step 2: Function to draw the bar chart
     const drawBarChart = data => {
-        // Create scales
-        // Screen technology categories on x-axis
         const xScale = d3.scaleBand()
             .domain(data.map(d => d.Screen_Tech))
             .range([0, innerWidth])
             .padding(0.1);
 
-        // Energy consumption on y-axis (domain up to 400 to give breathing room for 369 kWh)
         const yScale = d3.scaleLinear()
             .domain([0, 400])
             .range([innerHeight, 0]);
 
-        // Calculate axes
         const bottomAxis = d3.axisBottom(xScale)
-            .tickFormat(d => d.toUpperCase()); // Format lcd -> LCD, led -> LED, oled -> OLED
+            .tickFormat(d => d.toUpperCase());
 
         const leftAxis = d3.axisLeft(yScale);
-
-        // Append X axis to innerChart
         innerChart
             .append("g")
             .attr("class", "x-axis")
             .attr("transform", `translate(0, ${innerHeight})`)
             .call(bottomAxis);
 
-        // Append Y axis to innerChart
         innerChart
             .append("g")
             .attr("class", "y-axis")
             .call(leftAxis);
 
-        // Add Y-axis title label
         innerChart
             .append("text")
             .attr("class", "axis-label")
@@ -82,7 +69,6 @@
             .style("font-weight", "600")
             .text("Energy Consumption (kWh)");
 
-        // Add vertical bars
         innerChart
             .selectAll("rect.bar")
             .data(data)
@@ -94,7 +80,6 @@
             .attr("height", d => innerHeight - yScale(d.Energy_Consumption))
             .attr("fill", "green");
 
-        // Add value labels on top of each bar
         innerChart
             .selectAll("text.bar-label")
             .data(data)
