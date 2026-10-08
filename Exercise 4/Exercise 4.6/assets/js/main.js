@@ -1,7 +1,3 @@
-// Exercise 4.3 & 4.4: D3 setup and CSV data loading
-
-// SVG setup
-// viewBox width set to 500 (height adjusted to 400 to prevent unreasonable length)
 const svg = d3.select(".responsive-svg-container")
     .append("svg")
     .attr("viewBox", "0 0 500 400")
@@ -21,11 +17,9 @@ d3.csv("assets/Data/Exercise4.4.csv", d => {
     console.log("Min count (d3.min):", d3.min(data, d => d.count));
     console.log("Count extent [min, max] (d3.extent):", d3.extent(data, d => d.count));
 
-    // Sort data in descending order by count
     data.sort((a, b) => b.count - a.count);
     console.log("Sorted Data (descending):", data);
 
-    // Call drawBarChart to pass data for building visualisation
     drawBarChart(data);
 }).catch(error => {
     console.error("Error loading CSV file:", error);
@@ -34,12 +28,10 @@ d3.csv("assets/Data/Exercise4.4.csv", d => {
 // Exercise 4.7: Adding labels to bar chart
 const drawBarChart = data => {
     // Step 1: Add Linear scale for count data (x-axis)
-    // Leaving 100px for brand labels on left, max range up to 480 to fit within 500px width
     const xScale = d3.scaleLinear()
         .domain([0, 1200])
         .range([0, 380]);
 
-    // Band scale for discrete brand categories (y-axis) with padding
     const yScale = d3.scaleBand()
         .domain(data.map(d => d.brand))
         .range([0, 400])
